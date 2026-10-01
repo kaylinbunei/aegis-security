@@ -11,23 +11,27 @@ btn.addEventListener("click", function(){
 });
 menu.addEventListener("click", function(e){ if(e.target.tagName==="A"){ menu.classList.remove("open"); btn.setAttribute("aria-expanded","false"); }});
 
-// Hero route: the escort marker travels the route once on load
+// Hero route: the escort marker travels from departure to arrival, pauses, then starts again
 (function(){
   var path = document.getElementById("done"), dot = document.getElementById("dot");
   var len = path.getTotalLength();
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    var end = path.getPointAtLength(len); dot.setAttribute("cx", end.x); dot.setAttribute("cy", end.y); return;
-  }
-  path.style.strokeDasharray = len; path.style.strokeDashoffset = len;
-  var start = null, dur = 4200;
-  function step(t){
-    if(!start) start = t;
-    var p = Math.min((t - start) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+  function place(e){
     path.style.strokeDashoffset = len * (1 - e);
     var pt = path.getPointAtLength(len * e);
     dot.setAttribute("cx", pt.x); dot.setAttribute("cy", pt.y);
-    if(p < 1) requestAnimationFrame(step);
   }
+  path.style.strokeDasharray = len;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { place(1); return; }
+  var travel = 4200, pause = 1200, start = null;
+  function step(t){
+    if (start === null) start = t;
+    var elapsed = t - start;
+    var p = Math.min(elapsed / travel, 1);
+    place(p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2);
+    if (elapsed >= travel + pause) start = t;
+    requestAnimationFrame(step);
+  }
+  place(0);
   requestAnimationFrame(step);
 })();
 
