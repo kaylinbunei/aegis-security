@@ -103,3 +103,5 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   .steps{grid-template-columns:1fr 1fr}
 }
 @media (max-width:480px){.steps{grid-template-columns:1fr}}
+select{color-scheme:light dark}
+select option{background:var(--paper);color:var(--text)}
