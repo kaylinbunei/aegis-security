@@ -91,7 +91,8 @@
         <select name="service"><option>Escort operations</option><option>Close protection</option><option>Secure movement planning</option><option>Not sure yet</option></select>
       </label>
       <label>Details of your movement<textarea name="details" required></textarea></label>
-      <button class="btn" type="submit">Send request</button>
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+      <button class="btn" id="send" type="submit">Send request</button>
       <div class="msg" id="msg" role="status" aria-live="polite"></div>
     </form>
   </div>
