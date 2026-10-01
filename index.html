@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AEGIS Escort Firm | Security Escort and Protection Services, Papua New Guinea</title>
+<meta name="description" content="Professional escort operations, close protection and secure movement across Papua New Guinea.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">AEGIS<span>.</span> ESCORT</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul id="menu">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#clients">Who we serve</a></li>
+      <li><a href="#standards">Our standards</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <h1>Safe passage across Papua New Guinea.</h1>
+    <p class="lead">AEGIS Escort Firm provides escort operations, close protection and secure movement for organizations and individuals working in rural and high-risk areas.</p>
+    <a class="btn" href="#contact">Request a security plan</a>
+    <a class="btn ghost" href="#services">See our services</a>
+    <svg class="route" viewBox="0 0 1000 170" role="img" aria-label="A secured route from departure to destination, with the escort moving along it">
+      <path class="trail" d="M20 120 C 160 120, 200 50, 340 60 S 520 140, 640 100 S 860 30, 980 50"/>
+      <path id="done" class="done" d="M20 120 C 160 120, 200 50, 340 60 S 520 140, 640 100 S 860 30, 980 50"/>
+      <circle class="node" cx="20" cy="120" r="7"/><circle class="node" cx="980" cy="50" r="7"/>
+      <circle id="dot" r="8" fill="#e3a72b" cx="20" cy="120"/>
+      <text x="20" y="152">Departure</text><text x="905" y="32">Arrival</text>
+    </svg>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What we do</h2>
+    <p class="intro">Every movement is planned before it starts and controlled until it ends.</p>
+    <div class="services">
+      <div class="svc"><h3>Escort operations</h3><p>Escorted road and field movement for people, vehicles and cargo, with route control and continuous communication from start to finish.</p></div>
+      <div class="svc"><h3>Close protection</h3><p>Trained protection officers for executives, officials, visiting delegations and private clients, in the office, at events and in transit.</p></div>
+      <div class="svc"><h3>Secure movement solutions</h3><p>Route assessment, movement planning and contingency preparation for operations in remote and high-risk locations.</p></div>
+      <div class="svc"><h3>Tailored security plans</h3><p>Each plan is built around the client's people, locations and risks, not a fixed package.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="clients" class="band">
+  <div class="wrap">
+    <h2>Who we serve</h2>
+    <div class="clients">
+      <div><h3>Corporate organizations</h3><p>Staff, site visits and project logistics.</p></div>
+      <div><h3>Government agencies</h3><p>Officials and teams moving between provinces.</p></div>
+      <div><h3>NGOs</h3><p>Field teams reaching communities safely.</p></div>
+      <div><h3>Private clients</h3><p>Individuals and families who need discreet protection.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="standards">
+  <div class="wrap">
+    <h2>Built on discipline</h2>
+    <div class="principles">
+      <div><h3>Discipline</h3><p>Clear procedures, clear roles and teams that follow the plan.</p></div>
+      <div><h3>Operational experience</h3><p>Practical knowledge of PNG's roads, regions and conditions.</p></div>
+      <div><h3>Reliability</h3><p>We arrive when we said we would, and we stay until the job is done.</p></div>
+    </div>
+    <p class="mission" style="margin-top:56px"><strong>Our mission:</strong> to ensure safe, controlled and disruption-free movement for every client we serve.</p>
+  </div>
+</section>
+
+<section id="contact" style="background:color-mix(in srgb,var(--text) 5%,var(--paper))">
+  <div class="wrap contact">
+    <div>
+      <h2>Plan your movement with us</h2>
+      <p class="intro">Tell us where your team is going and when. We will reply to discuss the route, the risks and the level of protection needed.</p>
+    </div>
+    <form id="form" novalidate>
+      <label>Your name<input name="name" autocomplete="name" required></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label>Service needed
+        <select name="service"><option>Escort operations</option><option>Close protection</option><option>Secure movement planning</option><option>Not sure yet</option></select>
+      </label>
+      <label>Details of your movement<textarea name="details" required></textarea></label>
+      <button class="btn" type="submit">Send request</button>
+      <div class="msg" id="msg" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><span>AEGIS Escort Firm, Papua New Guinea</span><span>&copy; <span id="yr"></span> All rights reserved</span></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
